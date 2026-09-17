@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+
+        <g transform="translate(45,45)">
+          <path d="M0 270 L125 40 L250 270 L185 270 L125 155 L62 270 Z" fill="#007BFF"/>
+          <path d="M0 270 C55 265 88 205 125 188 C163 170 185 190 206 226 L250 270
+                   L190 270 L156 217 C145 202 131 199 112 209 C81 226 55 263 0 270 Z" fill="#14D1C8"/>
+          <path d="M125 40 L158 99 L125 155 L93 99 Z" fill="#082D52"/>
+        </g>
+        <text x="345" y="190" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" fill="#082D52">AltSync</text>
+        <text x="350" y="248" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600" letter-spacing="12" fill="#5F7185">PARTNERS</text>
+</svg>
