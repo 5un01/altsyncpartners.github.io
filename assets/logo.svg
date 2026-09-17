@@ -1,11 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+<svg width="220" height="64" viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
 
-        <g transform="translate(45,45)">
-          <path d="M0 270 L125 40 L250 270 L185 270 L125 155 L62 270 Z" fill="#007BFF"/>
-          <path d="M0 270 C55 265 88 205 125 188 C163 170 185 190 206 226 L250 270
-                   L190 270 L156 217 C145 202 131 199 112 209 C81 226 55 263 0 270 Z" fill="#14D1C8"/>
-          <path d="M125 40 L158 99 L125 155 L93 99 Z" fill="#082D52"/>
-        </g>
-        <text x="345" y="190" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" fill="#082D52">AltSync</text>
-        <text x="350" y="248" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600" letter-spacing="12" fill="#5F7185">PARTNERS</text>
+  <g transform="translate(8 8)">
+    <circle cx="24" cy="24" r="22" fill="url(#brandGradient)"/>
+    <path d="M13 38L24 10L35 38H30L27.5 31H20.5L18 38H13ZM22 18.5L19.8 27H28.2L22 18.5Z" fill="#0b0f19"/>
+    <path d="M11 42.5H37" stroke="#dbeafe" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(64 14)">
+    <text x="0" y="20" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#f3f4f6">AltSync</text>
+    <text x="0" y="38" font-family="Arial, sans-serif" font-weight="600" font-size="10" fill="#93c5fd" letter-spacing="2.4">PARTNERS</text>
+  </g>
 </svg>
