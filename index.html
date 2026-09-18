@@ -2,30 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0f19">
+    <meta name="description" content="AltSync Partners provides high-velocity technical delivery and fractional delivery leadership for technology teams.">
     <title>AltSync Partners | High-Velocity Technical Delivery</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="apple-touch-icon" href="assets/favicon-32.png">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #0b0f19; color: #f3f4f6; margin: 0; padding: 40px 20px; line-height: 1.6; }
-        .container { max-width: 650px; margin: 0 auto; background: #111827; padding: 40px; border-radius: 12px; border: 1px solid #1f2937; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-        .site-logo { display: block; width: 220px; height: auto; margin-bottom: 24px; }
-        h1 { font-size: 2rem; color: #ffffff; margin-bottom: 5px; font-weight: 700; letter-spacing: -0.025em; }
-        .tagline { color: #3b82f6; font-size: 1.1rem; font-weight: 600; margin-top: 0; margin-bottom: 30px; }
-        p { color: #9ca3af; font-size: 1.05rem; }
-        h2 { font-size: 1.25rem; color: #ffffff; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { min-width: 320px; background: #0b0f19; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            margin: 0;
+            min-height: 100vh;
+            padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            background: #111827;
+            padding: clamp(28px, 6vw, 40px);
+            border-radius: 12px;
+            border: 1px solid #1f2937;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .site-logo {
+            display: block;
+            width: min(220px, 100%);
+            height: auto;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: clamp(1.75rem, 5vw, 2rem);
+            line-height: 1.2;
+            color: #ffffff;
+            margin: 0 0 5px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+        .tagline {
+            color: #3b82f6;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            line-height: 1.4;
+            font-weight: 600;
+            margin: 0 0 30px;
+        }
+        p { color: #9ca3af; font-size: clamp(1rem, 2.5vw, 1.05rem); }
+        h2 { font-size: 1.25rem; color: #ffffff; margin: 40px 0 15px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; }
         ul { padding-left: 20px; color: #9ca3af; }
         li { margin-bottom: 12px; font-size: 1rem; }
         strong { color: #e5e7eb; }
-        .cta-btn { display: inline-block; background-color: #2563eb; color: #ffffff; text-decoration: none; padding: 12px 24px; font-weight: 600; border-radius: 6px; margin-top: 30px; transition: background-color 0.2s ease; }
-        .cta-btn:hover { background-color: #1d4ed8; }
+        .cta-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 13px 24px;
+            min-height: 44px;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-top: 30px;
+            transition: background-color 0.2s ease;
+        }
+        .cta-btn:hover, .cta-btn:focus-visible { background-color: #1d4ed8; }
+        .cta-btn:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
         footer { margin-top: 40px; font-size: 0.85rem; color: #4b5563; text-align: center; }
-        @media (max-width: 520px) { .container { padding: 28px 24px; } .site-logo { width: 190px; } }
+        @media (max-width: 520px) {
+            .container { border-radius: 8px; }
+            .site-logo { width: min(190px, 100%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="assets/altsync-primary-horizontal.svg" alt="AltSync Partners logo" class="site-logo">
+    <main class="container">
+        <img src="assets/altsync-primary-horizontal.svg" alt="AltSync Partners logo" class="site-logo" width="220" height="auto" fetchpriority="high">
         <h1>AltSync Partners</h1>
         <p class="tagline">High-Velocity Technical Delivery. Zero Daytime Meeting Overhead.</p>
 
@@ -41,7 +99,7 @@
         <p>Facing execution roadblocks? Let’s map out a solution.</p>
 
         <a href="mailto:hello@altsyncpartners.com" class="cta-btn">Contact a Partner</a>
-    </div>
+    </main>
     <footer>
         &copy; 2026 AltSync Partners. All rights reserved. Professional Operations Consultancy.
     </footer>
