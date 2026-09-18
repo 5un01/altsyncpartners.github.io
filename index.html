@@ -1,107 +1,1172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0b0f19">
-    <meta name="description" content="AltSync Partners provides high-velocity technical delivery and fractional delivery leadership for technology teams.">
-    <title>AltSync Partners | High-Velocity Technical Delivery</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-    <link rel="apple-touch-icon" href="assets/favicon-32.png">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; }
-        html { min-width: 320px; background: #0b0f19; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            margin: 0;
-            min-height: 100vh;
-            padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
-            line-height: 1.6;
-            overflow-wrap: anywhere;
-        }
-        .container {
-            width: 100%;
-            max-width: 650px;
-            margin: 0 auto;
-            background: #111827;
-            padding: clamp(28px, 6vw, 40px);
-            border-radius: 12px;
-            border: 1px solid #1f2937;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        .site-logo {
-            display: block;
-            width: min(220px, 100%);
-            height: auto;
-            margin-bottom: 24px;
-        }
-        h1 {
-            font-size: clamp(1.75rem, 5vw, 2rem);
-            line-height: 1.2;
-            color: #ffffff;
-            margin: 0 0 5px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-        .tagline {
-            color: #3b82f6;
-            font-size: clamp(1rem, 3vw, 1.1rem);
-            line-height: 1.4;
-            font-weight: 600;
-            margin: 0 0 30px;
-        }
-        p { color: #9ca3af; font-size: clamp(1rem, 2.5vw, 1.05rem); }
-        h2 { font-size: 1.25rem; color: #ffffff; margin: 40px 0 15px; border-bottom: 1px solid #1f2937; padding-bottom: 8px; }
-        ul { padding-left: 20px; color: #9ca3af; }
-        li { margin-bottom: 12px; font-size: 1rem; }
-        strong { color: #e5e7eb; }
-        .cta-btn {
-            display: inline-block;
-            background-color: #2563eb;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 13px 24px;
-            min-height: 44px;
-            font-weight: 600;
-            border-radius: 6px;
-            margin-top: 30px;
-            transition: background-color 0.2s ease;
-        }
-        .cta-btn:hover, .cta-btn:focus-visible { background-color: #1d4ed8; }
-        .cta-btn:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
-        footer { margin-top: 40px; font-size: 0.85rem; color: #4b5563; text-align: center; }
-        @media (max-width: 520px) {
-            .container { border-radius: 8px; }
-            .site-logo { width: min(190px, 100%); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AltSync Partners helps technology teams reduce delivery friction, protect engineering time and improve technical delivery through asynchronous execution, lean operational flow and on-demand delivery leadership.">
+  <meta name="theme-color" content="#0b1220">
+  <title>AltSync Partners | High-Velocity Technical Delivery</title>
+
+  <!-- Favicon / browser icon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:title" content="AltSync Partners | High-Velocity Technical Delivery">
+  <meta property="og:description" content="Reduce delivery friction. Protect engineering time. Keep complex work moving.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://altsyncpartners.com/">
+
+  <style>
+    :root {
+      --ink: #0b1220;
+      --ink-2: #111c30;
+      --slate: #334155;
+      --muted: #64748b;
+      --line: #dbe3ec;
+      --surface: #f6f8fb;
+      --white: #ffffff;
+      --accent: #2f80ed;
+      --accent-dark: #1766c2;
+      --accent-soft: #eaf3ff;
+      --success: #1f7a55;
+      --max: 1160px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(11, 18, 32, .09);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      z-index: 9999;
+      background: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+
+    .skip-link:focus { left: 10px; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11,18,32,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid rgba(255,255,255,.7);
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before {
+      content: "";
+      width: 17px;
+      height: 17px;
+      border: 3px solid #72b2ff;
+      border-right-color: transparent;
+      border-radius: 50%;
+      transform: rotate(-35deg);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 3px;
+      background: #72b2ff;
+      transform: rotate(-35deg);
+      right: 5px;
+      top: 11px;
+      border-radius: 3px;
+    }
+
+    .brand span { font-size: 1.05rem; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #d9e2ef;
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: white; }
+
+    .nav-cta {
+      padding: 10px 17px;
+      border-radius: 999px;
+      background: white;
+      color: var(--ink) !important;
+    }
+
+    .nav-cta:hover { background: #eaf3ff; }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    /* Shared */
+    section { padding: 96px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    h1, h2, h3 { line-height: 1.13; letter-spacing: -.035em; }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      margin: 0 0 25px;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      margin: 0 0 20px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 0 0 10px;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.3rem);
+      color: var(--slate);
+      max-width: 760px;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 21px;
+      border-radius: 999px;
+      font-weight: 750;
+      font-size: .94rem;
+      border: 1px solid transparent;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 24px rgba(11,18,32,.13);
+    }
+
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-secondary { background: white; border-color: #cbd5e1; color: var(--ink); }
+    .btn-light { background: white; color: var(--ink); }
+    .btn-outline-light { border-color: rgba(255,255,255,.35); color: white; }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(circle at 78% 20%, rgba(47,128,237,.19), transparent 28%),
+        linear-gradient(135deg, #08101e 0%, #101c31 58%, #0b1220 100%);
+      color: white;
+      padding: 105px 0 95px;
+      overflow: hidden;
+    }
+
+    .hero .eyebrow { color: #9bc9ff; }
+    .hero .eyebrow::before { background: #72b2ff; }
+    .hero .lead { color: #c8d4e4; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.22fr .78fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero h1 span { color: #83bcff; }
+
+    .hero-card {
+      position: relative;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.055);
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+    }
+
+    .flow-label {
+      color: #9fb1c9;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .flow-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      color: #edf4fc;
+      font-weight: 650;
+    }
+
+    .flow-item:last-child { border-bottom: 0; }
+
+    .flow-num {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(114,178,255,.55);
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      color: #9bc9ff;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .hero-note {
+      margin-top: 23px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: #9fb1c9;
+      font-size: .9rem;
+    }
+
+    /* Problem */
+    .problem {
+      background: var(--surface);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .problem h2 { max-width: 560px; }
+
+    .problem-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .problem-list li {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 19px;
+      color: var(--slate);
+      font-weight: 600;
+    }
+
+    .problem-list li::before {
+      content: "→";
+      color: var(--accent);
+      margin-right: 9px;
+      font-weight: 900;
+    }
+
+    .problem-statement {
+      margin-top: 25px;
+      font-size: 1.15rem;
+      font-weight: 750;
+    }
+
+    /* Difference */
+    .difference-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 70px;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .principle {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    .principle-number {
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .principle p { color: var(--muted); margin: 0; }
+
+    .difference-tag {
+      margin-top: 26px;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    /* Services */
+    .services {
+      background: var(--surface);
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 31px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 30px rgba(11,18,32,.035);
+    }
+
+    .service-number {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      margin-bottom: 23px;
+    }
+
+    .service > p { color: var(--muted); }
+
+    .service ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .service li {
+      padding: 8px 0;
+      border-top: 1px solid #edf1f5;
+      font-size: .92rem;
+      color: var(--slate);
+    }
+
+    .service li::before {
+      content: "✓";
+      color: var(--success);
+      margin-right: 9px;
+      font-weight: 900;
+    }
+
+    .outcome {
+      margin-top: auto;
+      padding-top: 24px;
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    /* Engagement */
+    .engagement {
+      background: var(--ink);
+      color: white;
+    }
+
+    .engagement .lead { color: #c8d4e4; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 50px;
+    }
+
+    .step {
+      padding: 26px 28px 10px;
+      border-left: 1px solid rgba(255,255,255,.13);
+    }
+
+    .step:first-child { border-left: 0; padding-left: 0; }
+
+    .step-number {
+      color: #83bcff;
+      font-weight: 900;
+      font-size: .82rem;
+      letter-spacing: .1em;
+      margin-bottom: 22px;
+    }
+
+    .step p { color: #aebdd0; }
+
+    .engagement-statement {
+      margin-top: 55px;
+      max-width: 780px;
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      font-weight: 750;
+      letter-spacing: -.025em;
+    }
+
+    /* Audience */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 13px;
+    }
+
+    .audience {
+      min-height: 210px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+    }
+
+    .audience p { color: var(--muted); font-size: .92rem; }
+
+    /* Outcomes */
+    .outcomes {
+      background: var(--surface);
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .outcome-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 27px;
+    }
+
+    .outcome-card p { color: var(--muted); margin-bottom: 0; }
+
+    /* Credibility */
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .credibility-copy p { color: var(--muted); }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .experience-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      font-weight: 700;
+      background: white;
+    }
+
+    /* Proof */
+    .proof {
+      background: var(--surface);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .proof-panel {
+      border-radius: 20px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    .proof-panel.after {
+      background: #edf6ff;
+      border-color: #cfe4fb;
+    }
+
+    .proof-panel h3 { margin-bottom: 25px; }
+
+    .proof-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid #e9eef4;
+      color: var(--slate);
+      font-weight: 600;
+    }
+
+    .proof-line:last-child { border-bottom: 0; }
+
+    .proof-arrow {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--accent);
+      font-weight: 900;
+      padding: 12px;
+    }
+
+    .proof-result {
+      margin-top: 26px;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    /* Offer */
+    .offer {
+      background: white;
+    }
+
+    .offer-box {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      padding: 48px;
+      border-radius: 25px;
+      background: var(--ink);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .offer-box p { color: #bdc9d9; }
+
+    .offer-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    .offer-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.11);
+      color: #e7eef7;
+    }
+
+    .offer-list li::before {
+      content: "✓";
+      color: #83bcff;
+      margin-right: 10px;
+      font-weight: 900;
+    }
+
+    /* CTA */
+    .cta {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(47,128,237,.2), transparent 30%),
+        var(--ink);
+      color: white;
+      text-align: center;
+      padding: 105px 0;
+    }
+
+    .cta h2 { max-width: 800px; margin: 0 auto 18px; }
+    .cta p { color: #c4d0df; max-width: 650px; margin: 0 auto; }
+    .cta .btns { justify-content: center; }
+    .cta-note { margin-top: 20px; font-size: .85rem; color: #91a2b8 !important; }
+
+    /* Footer */
+    footer {
+      background: #070d18;
+      color: #b9c5d4;
+      padding: 45px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    footer .brand { margin-bottom: 15px; }
+    footer p { max-width: 420px; font-size: .9rem; color: #8796aa; }
+
+    .footer-links h4 {
+      color: white;
+      margin: 0 0 12px;
+      font-size: .88rem;
+    }
+
+    .footer-links a {
+      display: block;
+      margin: 8px 0;
+      font-size: .88rem;
+      color: #9aa9bc;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .copyright {
+      padding-top: 22px;
+      font-size: .78rem;
+      color: #6f7d90;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid,
+      .problem-grid,
+      .difference-grid,
+      .credibility-grid,
+      .offer-box { grid-template-columns: 1fr; }
+
+      .hero-card { max-width: 650px; }
+
+      .service-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: 1fr 1fr; gap: 25px; }
+      .step, .step:first-child { border-left: 0; padding: 20px 0; }
+      .outcome-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      section { padding: 72px 0; }
+      .hero { padding: 80px 0 70px; }
+      h1 { font-size: clamp(2.7rem, 14vw, 4rem); }
+
+      .menu-button { display: block; }
+      nav ul {
+        display: none;
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: 70px;
+        padding: 16px;
+        background: #101c31;
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      nav ul.open { display: flex; }
+      nav li { border-bottom: 1px solid rgba(255,255,255,.08); }
+      nav li:last-child { border-bottom: 0; }
+      nav a { display: block; padding: 13px 8px; }
+      .nav-cta { text-align: center; margin-top: 7px; }
+
+      .problem-list,
+      .principles,
+      .audience-grid,
+      .outcome-grid,
+      .experience-list,
+      .proof-grid,
+      .footer-grid { grid-template-columns: 1fr; }
+
+      .steps { grid-template-columns: 1fr; }
+      .offer-box { padding: 30px 23px; }
+      .btn { width: 100%; }
+      .copyright { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+  </style>
 </head>
+
 <body>
-    <main class="container">
-        <img src="assets/altsync-primary-horizontal.svg" alt="AltSync Partners logo" class="site-logo" width="220" height="auto" fetchpriority="high">
-        <h1>AltSync Partners</h1>
-        <p class="tagline">High-Velocity Technical Delivery. Zero Daytime Meeting Overhead.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <p>We partner with small technology teams and independent delivery professionals to permanently resolve pipeline friction. We restore your engineering velocity without adding daytime meeting overhead.</p>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="AltSync Partners home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AltSync Partners</span>
+      </a>
 
-        <h2>Our Core Framework</h2>
+      <button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+      <nav id="main-nav" aria-label="Main navigation">
         <ul>
-            <li><strong>Asynchronous Execution:</strong> We protect the maker's schedule by moving coordination out of real-time calendars and into optimized, async tracking engines.</li>
-            <li><strong>Lean Operational Flow:</strong> We audit, locate, and aggressively strip out the procedural bottlenecks slowing down your software deployments.</li>
-            <li><strong>On-Demand Leadership:</strong> Get elite fractional delivery management exactly when you need it—completely free of permanent recruitment risk.</li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#who">Who it's for</a></li>
+          <li><a href="#about">Experience</a></li>
+          <li><a class="nav-cta" href="mailto:hello@altsyncpartners.com?subject=AltSync%20Partners%20-%20Delivery%20Conversation">Start a conversation</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <p>Facing execution roadblocks? Let’s map out a solution.</p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Technical delivery without the overhead</div>
+          <h1>High-Velocity Technical Delivery. <span>Without the Meeting Overhead.</span></h1>
+          <p class="lead">
+            AltSync Partners helps technology teams deliver faster by replacing unnecessary coordination with clear ownership, asynchronous execution and focused technical delivery leadership.
+          </p>
+          <p class="lead">
+            We help small technology teams and organisations reduce delivery friction, protect engineering time and keep complex work moving — without adding another layer of process.
+          </p>
+          <div class="btns">
+            <a class="btn btn-primary" href="#services">Explore how we work</a>
+            <a class="btn btn-outline-light" href="mailto:hello@altsyncpartners.com?subject=AltSync%20Partners%20-%20Start%20a%20Conversation">Start a conversation</a>
+          </div>
+        </div>
 
-        <a href="mailto:hello@altsyncpartners.com" class="cta-btn">Contact a Partner</a>
-    </main>
-    <footer>
-        &copy; 2026 AltSync Partners. All rights reserved. Professional Operations Consultancy.
-    </footer>
+        <aside class="hero-card" aria-label="AltSync operating model">
+          <div class="flow-label">The AltSync model</div>
+          <div class="flow-item"><span class="flow-num">01</span>Make work visible</div>
+          <div class="flow-item"><span class="flow-num">02</span>Make communication asynchronous</div>
+          <div class="flow-item"><span class="flow-num">03</span>Make ownership explicit</div>
+          <div class="flow-item"><span class="flow-num">04</span>Focus leadership where it matters</div>
+          <div class="hero-note">Async-first · Outcome-focused · Senior delivery expertise</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="problem" id="problem">
+      <div class="container problem-grid">
+        <div>
+          <div class="eyebrow">The problem</div>
+          <h2>Your engineers shouldn't spend their day coordinating work.</h2>
+          <p class="lead">Technology teams don't usually slow down because people aren't working hard. They slow down because too much time is lost to coordination.</p>
+          <p class="problem-statement">More meetings aren't the answer. Better delivery infrastructure is.</p>
+        </div>
+
+        <ul class="problem-list">
+          <li>Status meetings</li>
+          <li>Repeated updates</li>
+          <li>Unclear ownership</li>
+          <li>Waiting for decisions</li>
+          <li>Manual coordination</li>
+          <li>Hidden blockers</li>
+          <li>Scattered delivery information</li>
+          <li>Senior people becoming the connection point for everything</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container difference-grid">
+        <div>
+          <div class="eyebrow">The AltSync difference</div>
+          <h2>Replace coordination overhead with delivery flow.</h2>
+          <p class="lead">Most delivery models try to solve communication problems by adding more communication. AltSync takes a different approach.</p>
+          <p class="difference-tag">Less coordination. More execution.</p>
+        </div>
+
+        <div class="principles">
+          <article class="principle">
+            <div class="principle-number">01</div>
+            <h3>Make work visible.</h3>
+            <p>Everyone can see what needs to happen, who owns it and what is blocking progress.</p>
+          </article>
+          <article class="principle">
+            <div class="principle-number">02</div>
+            <h3>Make communication asynchronous.</h3>
+            <p>Updates, decisions and actions happen where the work happens — rather than consuming another meeting.</p>
+          </article>
+          <article class="principle">
+            <div class="principle-number">03</div>
+            <h3>Make leadership available when it matters.</h3>
+            <p>Bring in experienced delivery leadership for decisions, problems and moments that genuinely need it.</p>
+          </article>
+          <article class="principle">
+            <div class="principle-number">04</div>
+            <h3>Keep teams moving.</h3>
+            <p>Build practical operating habits that reduce friction without creating another layer of process.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">What we do</div>
+          <h2>Three ways to improve delivery.</h2>
+          <p class="lead">Bring in AltSync for a focused delivery problem, a capability gap or a broader improvement in how work flows through your technology organisation.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-number">01 — ASYNCHRONOUS EXECUTION</div>
+            <h3>Turn fragmented communication into a structured delivery flow.</h3>
+            <p>We help teams establish practical async ways of working that reduce unnecessary meetings while keeping everyone aligned.</p>
+            <ul>
+              <li>Async communication models</li>
+              <li>Delivery workflows</li>
+              <li>Decision logging</li>
+              <li>RAID and dependency management</li>
+              <li>Backlog and work visibility</li>
+              <li>Delivery reporting</li>
+              <li>Team operating practices</li>
+            </ul>
+            <div class="outcome">Outcome: Teams spend less time coordinating and more time delivering.</div>
+          </article>
+
+          <article class="service">
+            <div class="service-number">02 — LEAN OPERATIONAL FLOW</div>
+            <h3>Find where delivery gets stuck — then remove the friction.</h3>
+            <p>We examine how work moves from idea to delivery and identify the bottlenecks, hand-offs and unnecessary process slowing your team down.</p>
+            <ul>
+              <li>Delivery-flow reviews</li>
+              <li>Process simplification</li>
+              <li>Bottleneck identification</li>
+              <li>Agile / Kanban optimisation</li>
+              <li>Dependency management</li>
+              <li>Workflow design</li>
+              <li>Delivery metrics</li>
+            </ul>
+            <div class="outcome">Outcome: A simpler delivery system with fewer obstacles between decision and execution.</div>
+          </article>
+
+          <article class="service">
+            <div class="service-number">03 — ON-DEMAND DELIVERY LEADERSHIP</div>
+            <h3>Senior delivery expertise without a permanent headcount commitment.</h3>
+            <p>When delivery becomes complex, you don't always need another permanent hire. Bring in experienced technical delivery leadership when you need it.</p>
+            <ul>
+              <li>Fractional Delivery Management</li>
+              <li>Technical programme delivery</li>
+              <li>Agile leadership</li>
+              <li>Delivery recovery</li>
+              <li>Transformation delivery</li>
+              <li>Supplier / stakeholder coordination</li>
+              <li>Interim delivery leadership</li>
+            </ul>
+            <div class="outcome">Outcome: Experienced leadership exactly where and when it is needed.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="engagement" id="how">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">How it works</div>
+          <h2>Start with the problem. Not a transformation programme.</h2>
+          <p class="lead">Our engagements are designed to be practical, focused and proportionate to the problem you're trying to solve.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">01 — DIAGNOSE</div>
+            <h3>Understand the friction.</h3>
+            <p>We understand your delivery environment, the problems you're experiencing and where friction is occurring.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02 — DESIGN</div>
+            <h3>Choose the smallest practical intervention.</h3>
+            <p>We agree the smallest practical intervention capable of addressing the problem.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03 — DELIVER</div>
+            <h3>Work alongside your team.</h3>
+            <p>We help implement the changes, establish the operating rhythm and get delivery moving.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">04 — TRANSFER</div>
+            <h3>Leave capability behind.</h3>
+            <p>The objective isn't dependency on AltSync. It's leaving your team with a better way of working.</p>
+          </article>
+        </div>
+
+        <div class="engagement-statement">We don't add process for the sake of process. We remove friction so your team can execute.</div>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">Who it's for</div>
+          <h2>Built for teams where delivery matters.</h2>
+          <p class="lead">AltSync is particularly suited to teams facing growth, complexity, delivery pressure or a temporary leadership gap.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience">
+            <h3>Technology teams</h3>
+            <p>When engineering capacity is being consumed by coordination rather than delivery.</p>
+          </article>
+          <article class="audience">
+            <h3>Growing organisations</h3>
+            <p>When the delivery model that worked at 10 people isn't working at 30.</p>
+          </article>
+          <article class="audience">
+            <h3>Complex programmes</h3>
+            <p>When dependencies, stakeholders and suppliers are making delivery harder than it needs to be.</p>
+          </article>
+          <article class="audience">
+            <h3>Between hires</h3>
+            <p>When you need experienced delivery leadership now — but don't need another permanent position.</p>
+          </article>
+          <article class="audience">
+            <h3>Delivery professionals</h3>
+            <p>When experienced delivery capability needs to be brought into a team or programme without unnecessary overhead.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="outcomes">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">The objective</div>
+          <h2>The objective isn't more Agile. It's better delivery.</h2>
+        </div>
+
+        <div class="outcome-grid">
+          <article class="outcome-card"><h3>Less meeting overhead</h3><p>Protect valuable engineering and technical time.</p></article>
+          <article class="outcome-card"><h3>Clearer ownership</h3><p>Everyone understands who owns the next action.</p></article>
+          <article class="outcome-card"><h3>Faster decisions</h3><p>Make decisions visible and accessible rather than repeatedly revisiting them.</p></article>
+          <article class="outcome-card"><h3>Earlier blockers</h3><p>Surface delivery friction before it becomes a programme problem.</p></article>
+          <article class="outcome-card"><h3>Better visibility</h3><p>Give stakeholders the information they need without constant status-chasing.</p></article>
+          <article class="outcome-card"><h3>Sustainable delivery</h3><p>Build operating practices that teams can actually maintain.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container credibility-grid">
+        <div class="credibility-copy">
+          <div class="eyebrow">Experience</div>
+          <h2>Experienced delivery leadership. Built around real-world delivery.</h2>
+          <p>AltSync Partners brings practical experience across complex technology, transformation and operational environments.</p>
+          <p>Our approach is grounded in hands-on delivery experience — not theoretical frameworks.</p>
+        </div>
+
+        <div class="experience-list" aria-label="Areas of experience">
+          <div class="experience-item">Financial services</div>
+          <div class="experience-item">Government</div>
+          <div class="experience-item">Technology</div>
+          <div class="experience-item">Digital transformation</div>
+          <div class="experience-item">Infrastructure</div>
+          <div class="experience-item">Cybersecurity</div>
+          <div class="experience-item">Large-scale public services</div>
+          <div class="experience-item">Technical delivery leadership</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">The shift</div>
+          <h2>What better delivery flow looks like.</h2>
+          <p class="lead">The aim is not to eliminate communication. It is to make communication purposeful, visible and proportionate.</p>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-panel">
+            <h3>Before</h3>
+            <div class="proof-line">Multiple coordination meetings</div>
+            <div class="proof-line">Scattered updates</div>
+            <div class="proof-line">Unclear dependencies</div>
+            <div class="proof-line">Status chasing</div>
+            <div class="proof-line">Delayed decisions</div>
+          </div>
+
+          <div class="proof-panel after">
+            <h3>AltSync approach</h3>
+            <div class="proof-line">Visible work</div>
+            <div class="proof-line">Async updates</div>
+            <div class="proof-line">Clear ownership</div>
+            <div class="proof-line">Explicit dependencies</div>
+            <div class="proof-line">Focused leadership</div>
+            <div class="proof-result">More time spent executing. Less time spent coordinating.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="review">
+      <div class="container">
+        <div class="offer-box">
+          <div>
+            <div class="eyebrow">A practical place to start</div>
+            <h2>Delivery Friction Review</h2>
+            <p class="lead">A focused assessment of where your delivery system is losing time.</p>
+            <p>We look at how work enters the system, how priorities are managed, how teams communicate, where decisions happen, where dependencies occur and how delivery information flows.</p>
+            <a class="btn btn-primary" href="mailto:hello@altsyncpartners.com?subject=Delivery%20Friction%20Review">Discuss a Delivery Friction Review</a>
+          </div>
+
+          <div>
+            <h3>You'll receive</h3>
+            <ul class="offer-list">
+              <li>Key delivery friction points</li>
+              <li>Prioritised improvement opportunities</li>
+              <li>Practical recommendations</li>
+              <li>Suggested next steps</li>
+            </ul>
+            <p style="margin-top:22px;"><strong>No lengthy transformation programme. No unnecessary framework.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="eyebrow">Let's talk</div>
+        <h2>Something slowing delivery down?</h2>
+        <p>You don't necessarily need another meeting. You may need to change how the work flows.</p>
+        <div class="btns">
+          <a class="btn btn-light" href="mailto:hello@altsyncpartners.com?subject=AltSync%20Partners%20-%20Start%20a%20Conversation">Start a conversation →</a>
+        </div>
+        <p class="cta-note">No sales presentation. No obligation. Just a conversation about the delivery problem you're trying to solve.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>AltSync Partners</span>
+        </a>
+        <p>High-Velocity Technical Delivery. Without the Meeting Overhead.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#approach">Approach</a>
+        <a href="#services">Services</a>
+        <a href="#who">Who it's for</a>
+        <a href="#about">Experience</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:hello@altsyncpartners.com">hello@altsyncpartners.com</a>
+        <a href="#review">Delivery Friction Review</a>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <span>© 2026 AltSync Partners. All rights reserved.</span>
+      <span>UK-based technical delivery consultancy.</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navList = document.querySelector('#main-nav ul');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navList.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', isOpen);
+      menuButton.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    document.querySelectorAll('#main-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+      });
+    });
+  </script>
 </body>
 </html>
